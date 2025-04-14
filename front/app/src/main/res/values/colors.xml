@@ -13,4 +13,7 @@
     <color name="gray_text">#757575</color>
     <color name="light_gray">#BDBDBD</color>
     <color name="register_text_gray">#808080</color>
+    <color name="main_blue">#0C21C1</color>
+    <color name="background_grad">#B3D5FF</color>
+
 </resources>

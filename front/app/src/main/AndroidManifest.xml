@@ -4,7 +4,6 @@
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
-
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -15,21 +14,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Material3.DayNight.NoActionBar"
         tools:targetApi="31">
-
-        <activity android:name=".HomeActivity" />
-
-        <!-- 회원가입 액티비티 등록 -->
-        <activity android:name=".SignupActivity" />
-
+        <!-- ✅ MainActivity에만 투명 테마 적용 -->
         <activity
             android:name=".MainActivity"
+            android:theme="@style/Theme.OnGi.Transparent" />
+
+        <activity
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
 
+
+        <!-- ✅ 나머지 액티비티들 등록 -->
+        <activity android:name=".SignupActivity" />
+        <activity android:name=".HomeActivity" />
+
+    </application>
 </manifest>
