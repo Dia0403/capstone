@@ -33,7 +33,7 @@ class SignupActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            val request = SignupRequest(username, password, email, phone)
+            val request = SignupRequest(username, password, passwordConfirm, email, phone)
 
             RetrofitInstance.api.signup(request).enqueue(object : Callback<ResponseBody> {
                 override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
