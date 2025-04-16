@@ -6,9 +6,9 @@ import retrofit2.http.Body
 import retrofit2.http.POST
 
 interface ApiService {
-    @POST("/signup")
+    @POST("/api/signup")  // ✅ 수정됨
     fun signup(@Body request: SignupRequest): Call<ResponseBody>
 
-    @POST("/login")
+    @POST("/api/login")   // ✅ 이것도 같이 수정
     fun login(@Body request: LoginRequest): Call<ResponseBody>
 }
