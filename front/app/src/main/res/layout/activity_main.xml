@@ -1,19 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="@color/white">
 
+    <!-- 인사 메시지 -->
     <TextView
+        android:id="@+id/textGreeting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="누구님은 현재\n안전한 상태입니다 😊"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp" />
+
+
+    <!-- 버튼 4개 -->
+    <GridLayout
+        android:id="@+id/gridButtons"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="2"
+        app:layout_constraintTop_toBottomOf="@id/textGreeting"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/btnLocation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="현위치 확인하기" />
+
+        <Button
+            android:id="@+id/btnReport"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="활동리포트 확인하기" />
+
+        <Button
+            android:id="@+id/btnNotification"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="알림내역 확인하기" />
+
+        <Button
+            android:id="@+id/btnCall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="피보호자와 연락하기" />
+
+    </GridLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
