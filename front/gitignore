@@ -35,3 +35,8 @@ $RECYCLE.BIN/
 # --- 기타 IDE 설정 파일 ---
 *.ipr
 *.iws
+
+# 환경 설정 무시
+config.properties
+local.properties
+.gradle/config.properties
