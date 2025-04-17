@@ -195,7 +195,7 @@
             android:gravity="center"
             android:text="회원가입"
             android:textColor="@color/white"
-            android:textSize="16.4sp"
+            android:textSize="16.5sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
