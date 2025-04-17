@@ -9,17 +9,4 @@
         </shape>
     </item>
 
-    <!-- 파란 밑줄: 입력창 안쪽 하단에 위치 -->
-    <item android:top="44dp"> <!-- ⬅️ EditText 높이보다 살짝 작게 (내부처럼 보이게) -->
-        <inset
-            android:insetLeft="2dp"
-            android:insetRight="2dp">
-            <shape android:shape="rectangle">
-                <size android:height="2dp" />
-                <solid android:color="@color/main_blue" />
-                <corners android:radius="1dp" />
-            </shape>
-        </inset>
-    </item>
-
 </layer-list>

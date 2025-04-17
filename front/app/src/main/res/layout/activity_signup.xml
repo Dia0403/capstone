@@ -25,6 +25,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
+                android:backgroundTint="@null"
         <!-- 부제목 -->
         <TextView
             android:id="@+id/subtitle"
@@ -182,22 +183,26 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <!-- 회원가입 버튼 -->
-        <Button
+
+        <android.widget.Button
+
             android:id="@+id/btnSignup"
             style="@android:style/Widget.Button"
             android:layout_width="0dp"
             android:layout_height="48dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="60dp"
+            android:layout_marginTop="25dp"
             android:background="@drawable/rounded_button"
+            android:gravity="center"
             android:text="회원가입"
             android:textColor="@color/white"
-            android:textSize="16sp"
-            android:gravity="center"
-            app:layout_constraintTop_toBottomOf="@id/autoLoginCheckBox"
-            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="16.5sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/autoLoginCheckBox"
+            app:layout_constraintVertical_bias="0.0" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
