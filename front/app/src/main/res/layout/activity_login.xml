@@ -9,7 +9,7 @@
     android:background="@color/white"
     tools:context=".MainActivity">
 
-    <!-- ✅ 가운데로 정렬된 컨텐츠 박스 -->
+    <!-- 가운데로 정렬된 컨텐츠 박스 -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/contentBox"
         android:layout_width="0dp"
@@ -66,6 +66,7 @@
             android:layout_marginTop="8dp"
             android:background="@drawable/edit_text_background"
             android:hint="아이디를 입력하세요.."
+            android:inputType="text"
             android:padding="12dp"
             android:textColor="@color/gray_text"
             android:textSize="14sp"
@@ -122,6 +123,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <!-- 비밀번호 찾기 주석처리
             <TextView
                 android:id="@+id/forgotPasswordLink"
                 android:layout_width="wrap_content"
@@ -132,6 +134,8 @@
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+             -->
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <!-- 로그인 버튼 -->
