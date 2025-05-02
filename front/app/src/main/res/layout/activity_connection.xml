@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fillViewport="true"
+    tools:context=".SignupActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp">
+
+        <!-- 제목 -->
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:paddingTop="60dp"
+            android:text="연동할 정보를\n입력해주세요."
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/roleSelector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            app:layout_constraintStart_toStartOf="parent">
+
+        </LinearLayout>
+
+        <!-- 보호자 성함 -->
+        <TextView
+            android:id="@+id/labelPasswordConfirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="보호자 성함"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="299dp" />
+
+        <EditText
+            android:id="@+id/editTextPasswordConfirm"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:hint="보호자 성함을 입력하세요.."
+            android:inputType="textPassword"
+            android:background="@drawable/edit_text_background"
+            android:textColor="@color/gray_text"
+            android:padding="12dp"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/labelPasswordConfirm"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- 피보호자 성함 -->
+
+        <TextView
+            android:id="@+id/labelEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="피보호자 성함"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editTextPasswordConfirm" />
+
+        <EditText
+            android:id="@+id/editTextEmail"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:hint="피보호자 성함을 입력하세요.."
+            android:inputType="textEmailAddress"
+            android:background="@drawable/edit_text_background"
+            android:textColor="@color/gray_text"
+            android:padding="12dp"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/labelEmail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- 전화번호 -->
+
+        <TextView
+            android:id="@+id/labelPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="연동할 상대방의 전화번호"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editTextEmail" />
+
+        <EditText
+            android:id="@+id/editTextPhone"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/edit_text_background"
+            android:hint="전화번호를 입력하세요.."
+            android:inputType="phone"
+            android:padding="12dp"
+            android:textColor="@color/gray_text"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/labelPhone" />
+
+        <!-- 확인 버튼 -->
+
+        <android.widget.Button
+            android:id="@+id/btnCorrect"
+            style="@android:style/Widget.Button"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="240dp"
+            android:background="@drawable/rounded_button"
+            android:gravity="center"
+            android:text="확인"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/autoLoginCheckBox"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <android.widget.Button
+
+            android:id="@+id/btnSignup"
+            style="@android:style/Widget.Button"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="128dp"
+            android:background="@drawable/rounded_button"
+            android:gravity="center"
+            android:text="연동하기"
+            android:textColor="@color/white"
+            android:textSize="16.5sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/autoLoginCheckBox"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <CheckBox
+            android:id="@+id/checkGuardian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="보호자"
+            tools:layout_editor_absoluteX="-5dp"
+            tools:layout_editor_absoluteY="232dp" />
+
+        <CheckBox
+            android:id="@+id/checkWard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="피보호자"
+            tools:layout_editor_absoluteX="83dp"
+            tools:layout_editor_absoluteY="232dp" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

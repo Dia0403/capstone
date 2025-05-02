@@ -2,65 +2,128 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white">
 
-    <!-- 인사 메시지 -->
+
+    <!--상단 인사-->
     <TextView
         android:id="@+id/textGreeting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="누구님은 현재\n안전한 상태입니다 😊"
+        android:layout_marginTop="136dp"
+        android:text="안녕하세요, 보호자님!"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="32dp" />
+        app:layout_constraintHorizontal_bias="0.112"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-
-    <!-- 버튼 4개 -->
-    <GridLayout
-        android:id="@+id/gridButtons"
-        android:layout_width="0dp"
+    <TextView
+        android:id="@+id/title2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:columnCount="2"
-        android:rowCount="2"
-        app:layout_constraintTop_toBottomOf="@id/textGreeting"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="108dp"
+        android:paddingTop="60dp"
+        android:text="홍길동님은 현재\n안전한 상태 입니다. 😊"
+        android:textSize="28sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="24dp"
-        android:padding="16dp">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/btnLocation"
-            android:layout_width="0dp"
+    <!-- 로그아웃 -->
+    <TextView
+        android:id="@+id/logoutText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:gravity="top"
+        android:lineSpacingExtra="-3sp"
+        android:text="로그아웃"
+        android:textColor="#B9B8B8"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="325dp"
+        tools:layout_editor_absoluteY="25dp" />
+
+    <!-- 회색줄 -->
+    <View
+        android:id="@+id/rule"
+        android:layout_width="350dp"
+        android:layout_height="1dp"
+        android:background="#D9D9D9"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="280dp" />
+
+    <!--버튼 1번-->
+    <FrameLayout
+        android:layout_width="350dp"
+        android:layout_height="140dp"
+        android:background="@drawable/rounded_button_border"
+        android:elevation="4dp"
+        android:padding="8dp"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="320dp">
+
+        <TextView
+            android:id="@+id/btnAlert"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_columnWeight="1"
-            android:text="현위치 확인하기" />
+            android:layout_gravity="center|end"
+            android:gravity="center"
+            android:paddingEnd="55dp"
+            android:text="현위치\n확인하기"
+            android:textColor="#1A237E"
+            android:textSize="23sp"
+            android:textStyle="bold" />
+    </FrameLayout>
 
-        <Button
-            android:id="@+id/btnReport"
-            android:layout_width="0dp"
+    <!--버튼 2번-->
+    <FrameLayout
+        android:layout_width="350dp"
+        android:layout_height="140dp"
+        android:background="@drawable/rounded_button_border"
+        android:padding="8dp"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="485dp">
+
+        <TextView
+            android:id="@+id/btnAlert"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_columnWeight="1"
-            android:text="활동리포트 확인하기" />
+            android:layout_gravity="center|end"
+            android:gravity="center"
+            android:paddingEnd="55dp"
+            android:text="알림\n확인하기"
+            android:textColor="#1A237E"
+            android:textSize="23sp"
+            android:textStyle="bold" />
+    </FrameLayout>
 
-        <Button
-            android:id="@+id/btnNotification"
-            android:layout_width="0dp"
+    <!--버튼 3번-->
+    <FrameLayout
+        android:layout_width="350dp"
+        android:layout_height="140dp"
+        android:background="@drawable/rounded_button_border"
+        android:elevation="4dp"
+        android:padding="8dp"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="650dp">
+
+        <TextView
+            android:id="@+id/btnAlert"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_columnWeight="1"
-            android:text="알림내역 확인하기" />
-
-        <Button
-            android:id="@+id/btnCall"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_columnWeight="1"
-            android:text="피보호자와 연락하기" />
-
-    </GridLayout>
+            android:layout_gravity="center|end"
+            android:gravity="center"
+            android:paddingEnd="55dp"
+            android:text="알림\n해제하기"
+            android:textColor="#1A237E"
+            android:textSize="23sp"
+            android:textStyle="bold" />
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
