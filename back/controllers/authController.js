@@ -4,7 +4,9 @@ const jwt = require('jsonwebtoken');
 
 exports.register = async (req, res) => {
   try {
-    const { username, password, password_confirm, email, phone } = req.body;
+    const { username, password, password_confirm, email, phone, role } = req.body;
+
+    console.log('📌 요청 받은 역할 role:', role);
 
     // 비밀번호 확인 검사
     if (password !== password_confirm) {
@@ -26,6 +28,7 @@ exports.register = async (req, res) => {
       password: hashedPassword,
       email,
       phone,
+      role
     });
     await newUser.save();
 
@@ -58,7 +61,20 @@ exports.login = async (req, res) => {
       { expiresIn: '1h' }
     );
 
-    res.status(200).json({ message: '로그인 성공', token });
+    //메일중복
+    const existingEmail = await User.findOne({ email });
+    if (existingEmail) {
+      return res.status(409).json({ message: '이미 사용 중인 이메일입니다.' });
+    }
+
+
+    //역할 추가
+    res.status(200).json({
+      message: '로그인 성공',
+      token,
+      role: user.role  // ← 이 줄을 추가 senior or caregiver
+    });
+
   } catch (err) {
     res.status(500).json({ message: '서버 에러', error: err.message });
   }

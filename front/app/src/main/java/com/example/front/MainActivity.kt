@@ -10,8 +10,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.front.RetrofitInstance.api
-import com.example.front.LoginRequest
-import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -46,12 +44,25 @@ class MainActivity : AppCompatActivity() {
 
             val loginRequest = LoginRequest(username, password)
 
-            api.login(loginRequest).enqueue(object : Callback<ResponseBody> {
-                override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+            api.login(loginRequest).enqueue(object : Callback<LoginResponse> {
+                override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                     if (response.isSuccessful) {
+                        val loginResponse = response.body()
+                        val role = loginResponse?.role
+
                         Toast.makeText(this@MainActivity, "로그인 성공!", Toast.LENGTH_SHORT).show()
-                        // TODO: 다음 화면 이동 or 홈화면으로 Intent
-                        val intent = Intent(this@MainActivity, HomeActivity::class.java)
+
+                        // ✅ 역할에 따라 홈 화면 분기
+                        val intent = when (role) {
+                            "guardian" -> Intent(this@MainActivity, CareGiver_HomeActivity::class.java)
+                            "senior" -> Intent(this@MainActivity, Senior_HomeActivity::class.java)
+
+                            else -> {
+                                Toast.makeText(this@MainActivity, "알 수 없는 사용자 역할입니다.", Toast.LENGTH_SHORT).show()
+                                return
+                            }
+                        }
+
                         startActivity(intent)
                         finish()  // ← 뒤로 가기 방지
                     } else {
@@ -59,7 +70,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
 
-                override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
                     Toast.makeText(this@MainActivity, "서버 연결 실패: ${t.message}", Toast.LENGTH_SHORT).show()
                 }
             })

@@ -7,8 +7,8 @@ import retrofit2.http.POST
 
 interface ApiService {
     @POST("/api/signup")  // ✅ 수정됨
-    fun signup(@Body request: SignupRequest): Call<ResponseBody>
+    fun signup(@Body request: SignupRequest): Call<LoginResponse>
 
     @POST("/api/login")   // ✅ 이것도 같이 수정
-    fun login(@Body request: LoginRequest): Call<ResponseBody>
+    fun login(@Body request: LoginRequest): Call<LoginResponse>
 }
