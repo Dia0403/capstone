@@ -5,5 +5,7 @@ data class SignupRequest(
     val password: String,
     val password_confirm: String,
     val email: String,
-    val phone: String
+    val phone: String,
+    val role: String       // ← guardian 또는 senior
 )
+
