@@ -53,45 +53,49 @@ class MainActivity : AppCompatActivity() {
 
                         Toast.makeText(this@MainActivity, "로그인 성공!", Toast.LENGTH_SHORT).show()
 
-                        if (role == "guardian") {
-                            api.getUserInfo(username).enqueue(object : Callback<UserResponse> {
-                                override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
-                                    val user = response.body()
-                                    val intent = if (user?.linkedUser != null) {
-                                        Intent(this@MainActivity, CareGiver_MainActivity::class.java)
-                                    } else {
-                                        Intent(this@MainActivity, CareGiver_HomeActivity::class.java)
-                                    }
-                                    intent.putExtra("username", username)
-                                    startActivity(intent)
-                                    finish()
-                                }
-
-                                override fun onFailure(call: Call<UserResponse>, t: Throwable) {
-                                    Toast.makeText(this@MainActivity, "서버 오류: ${t.message}", Toast.LENGTH_SHORT).show()
-                                }
-                            })
-
-                        } else if (role == "senior") {
-                            api.getUserInfo(username).enqueue(object : Callback<UserResponse> {
-                                override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
-                                    val user = response.body()
-                                    if (user?.linkedUser != null) {
-                                        val intent = Intent(this@MainActivity, ConnectionCompleteActivity::class.java)
+                        when (role) {
+                            "guardian" -> {
+                                api.getUserInfo(username).enqueue(object : Callback<UserResponse> {
+                                    override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
+                                        val user = response.body()
+                                        val intent = if (user?.linkedUser != null) {
+                                            Intent(this@MainActivity, CareGiver_MainActivity::class.java)
+                                        } else {
+                                            Intent(this@MainActivity, CareGiver_HomeActivity::class.java)
+                                        }
+                                        intent.putExtra("username", username)
                                         startActivity(intent)
                                         finish()
-                                    } else {
-                                        Toast.makeText(this@MainActivity, "아직 연동되지 않은 계정입니다.", Toast.LENGTH_SHORT).show()
                                     }
-                                }
 
-                                override fun onFailure(call: Call<UserResponse>, t: Throwable) {
-                                    Toast.makeText(this@MainActivity, "서버 오류: ${t.message}", Toast.LENGTH_SHORT).show()
-                                }
-                            })
+                                    override fun onFailure(call: Call<UserResponse>, t: Throwable) {
+                                        Toast.makeText(this@MainActivity, "서버 오류: ${t.message}", Toast.LENGTH_SHORT).show()
+                                    }
+                                })
+                            }
 
-                        } else {
-                            Toast.makeText(this@MainActivity, "알 수 없는 사용자 역할입니다.", Toast.LENGTH_SHORT).show()
+                            "senior" -> {
+                                api.getUserInfo(username).enqueue(object : Callback<UserResponse> {
+                                    override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
+                                        val user = response.body()
+                                        if (user?.linkedUser != null) {
+                                            val intent = Intent(this@MainActivity, SeniorEmergencyCallActivity::class.java)
+                                            startActivity(intent)
+                                            finish()
+                                        } else {
+                                            Toast.makeText(this@MainActivity, "아직 연동되지 않은 계정입니다.", Toast.LENGTH_SHORT).show()
+                                        }
+                                    }
+
+                                    override fun onFailure(call: Call<UserResponse>, t: Throwable) {
+                                        Toast.makeText(this@MainActivity, "서버 오류: ${t.message}", Toast.LENGTH_SHORT).show()
+                                    }
+                                })
+                            }
+
+                            else -> {
+                                Toast.makeText(this@MainActivity, "알 수 없는 사용자 역할입니다.", Toast.LENGTH_SHORT).show()
+                            }
                         }
 
                     } else {
