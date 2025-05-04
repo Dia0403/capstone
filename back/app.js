@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const connectDB = require('./config/db');
 const authRoutes = require('./routes/auth');
+const userRoutes = require('./routes/user'); // ✅ 사용자 연동용 라우터
 const dotenv = require('dotenv');
 const cors = require('cors');
 
@@ -17,6 +18,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // ✅ API 라우트
 app.use('/api', authRoutes);
+app.use('/api/user', userRoutes); // ✅ 사용자 연동용 라우터 추가
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
@@ -24,4 +26,3 @@ app.listen(PORT, () => {
 });
 
 console.log("✅ JWT_SECRET:", process.env.JWT_SECRET);
-
