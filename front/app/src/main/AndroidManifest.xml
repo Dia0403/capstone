@@ -34,7 +34,11 @@
         <!-- ✅ 나머지 액티비티들 등록 -->
         <activity android:name=".SignupActivity" />
         <activity android:name=".CareGiver_HomeActivity" />
+        <activity android:name=".CareGiver_MainActivity" />
         <activity android:name=".ConnectionCompleteActivity" />
+        <activity android:name=".SeniorEmergencyCallActivity" />
+
+
 
 
     </application>

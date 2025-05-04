@@ -23,7 +23,12 @@ const userSchema = new mongoose.Schema({
     type: String,
     enum: ['guardian', 'senior'], // 잘못된 값 저장 방지
     required: true
+  },
+  linkedUser: {              // ✅ 연동된 상대방 ID(username 등)
+    type: String,
+    default: null
   }
+
 }, { timestamps: true });
 
 
