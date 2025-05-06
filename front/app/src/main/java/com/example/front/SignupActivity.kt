@@ -27,16 +27,29 @@ class SignupActivity : AppCompatActivity() {
             val passwordConfirm = pwConfirmEditText.text.toString()
             val email = emailEditText.text.toString()
             val phone = phoneEditText.text.toString()
+            val guardianRadio = findViewById<RadioButton>(R.id.radioGuardian)
+            val seniorRadio = findViewById<RadioButton>(R.id.radioSenior)
+
+            val role = when {
+                guardianRadio.isChecked -> "guardian"
+                seniorRadio.isChecked -> "senior"
+                else -> {
+                    Toast.makeText(this, "역할을 선택해주세요.", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+            }
+
+
+            val request = SignupRequest(username, password, passwordConfirm, email, phone, role)
+
 
             if (password != passwordConfirm) {
                 Toast.makeText(this, "비밀번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            val request = SignupRequest(username, password, passwordConfirm, email, phone)
-
-            RetrofitInstance.api.signup(request).enqueue(object : Callback<ResponseBody> {
-                override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+            RetrofitInstance.api.signup(request).enqueue(object : Callback<LoginResponse> {
+                override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                     if (response.isSuccessful) {
                         Toast.makeText(this@SignupActivity, "회원가입 성공!", Toast.LENGTH_SHORT).show()
 
@@ -49,7 +62,7 @@ class SignupActivity : AppCompatActivity() {
                     }
                 }
 
-                override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
                     Toast.makeText(this@SignupActivity, "서버 오류: ${t.message}", Toast.LENGTH_SHORT).show()
                 }
             })

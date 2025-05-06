@@ -53,7 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:text="아이디"
-            android:textSize="16sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/loginSubtitle" />
@@ -80,11 +80,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:text="비밀번호"
-            android:textSize="16sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/usernameEditText" />
-
         <!-- 비밀번호 입력 -->
         <EditText
             android:id="@+id/passwordEditText"
@@ -123,6 +122,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+
+            <!-- 비밀번호 찾기 버튼 주석처리
             <TextView
                 android:id="@+id/forgotPasswordLink"
                 android:layout_width="wrap_content"
@@ -133,6 +134,8 @@
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+            -->
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <!-- 로그인 버튼 -->
@@ -160,12 +163,12 @@
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_marginTop="16dp"
-            android:background="@drawable/register_button"
+            android:background="@drawable/rounded_button"
             android:backgroundTint="@null"
             android:gravity="center"
             android:text="회원가입"
-            android:textColor="@color/white"
-            android:textSize="14sp"
+            android:textColor="#ffffff"
+            android:textSize="16.5sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/loginButton" />

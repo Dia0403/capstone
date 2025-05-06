@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">OnGi</string>
+
+    <string-array name="role_array">
+        <item>guardian</item>
+        <item>senior</item>
+    </string-array>
+
 </resources>
