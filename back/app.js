@@ -3,8 +3,11 @@ const path = require('path');
 const connectDB = require('./config/db');
 const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/user'); // ✅ 사용자 연동용 라우터
+const linkRoutes = require('./routes/link'); // ✅ 연동용 라우터
 const dotenv = require('dotenv');
 const cors = require('cors');
+
+
 
 dotenv.config();
 const app = express();
@@ -17,8 +20,9 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // ✅ API 라우트
-app.use('/api', authRoutes);
-app.use('/api/user', userRoutes); // ✅ 사용자 연동용 라우터 추가
+app.use('/api', authRoutes);            // 로그인, 회원가입 등
+app.use('/api/user', userRoutes);       // 유저 관련 기타
+app.use('/api/link', linkRoutes);       // 연동용 라우트
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

@@ -4,19 +4,20 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.example.front.SeniorEmergencyCallActivity
 
 class ConnectionCompleteActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_connection_complete)
 
-        val btnConfirm = findViewById<Button>(R.id.btnConfirm)
-        btnConfirm.setOnClickListener {
-            val intent = Intent(this, SeniorEmergencyCallActivity::class.java)
+        val username = intent.getStringExtra("username")
+
+        val confirmButton = findViewById<Button>(R.id.btnConfirm)
+        confirmButton.setOnClickListener {
+            val intent = Intent(this, CareGiver_MainActivity::class.java)
+            intent.putExtra("username", username)
             startActivity(intent)
             finish()
         }
-
     }
 }
