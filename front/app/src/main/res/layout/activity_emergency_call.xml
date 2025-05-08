@@ -59,6 +59,16 @@
         tools:layout_editor_absoluteX="30dp"
         tools:layout_editor_absoluteY="370dp">
 
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:contentDescription="사이렌"
+            android:gravity="center"
+            android:src="@drawable/ic_emergency"
+            android:layout_marginBottom="28dp" />
+
         <TextView
             android:id="@+id/btnAlert"
             android:layout_width="wrap_content"
@@ -67,6 +77,7 @@
             android:gravity="center"
             android:text="긴급 호출"
             android:textColor="#1A237E"
+            android:layout_marginTop="70dp"
             android:textSize="30sp"
             android:textStyle="bold" />
 
