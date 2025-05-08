@@ -1,6 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/tvWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="반가워요, 홍길동님!"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="122dp"
+        tools:layout_editor_absoluteY="200dp" />
+
+    <TextView
+        android:id="@+id/tvQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="도움이 필요하신가요? 😊"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="68dp"
+        tools:layout_editor_absoluteY="238dp" />
+
+    <View
+        android:id="@+id/rule"
+        android:layout_width="300dp"
+        android:layout_height="1dp"
+        android:background="#D9D9D9"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="320dp" />
+
+    <TextView
+        android:id="@+id/logoutText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:gravity="top"
+        android:lineSpacingExtra="-3sp"
+        android:text="로그아웃"
+        android:textColor="#B9B8B8"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="325dp"
+        tools:layout_editor_absoluteY="25dp" />
+
+    <FrameLayout
+        android:id="@+id/btnEmergency"
+        android:layout_width="350dp"
+        android:layout_height="250dp"
+        android:background="@drawable/rounded_button_border"
+        android:elevation="30dp"
+        android:padding="8dp"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="370dp">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:contentDescription="사이렌"
+            android:gravity="center"
+            android:src="@drawable/ic_emergency"
+            android:layout_marginBottom="28dp" />
+
+        <TextView
+            android:id="@+id/btnAlert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="긴급 호출"
+            android:textColor="#1A237E"
+            android:layout_marginTop="70dp"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+    </FrameLayout>
+</LinearLayout>
+</FrameLayout>

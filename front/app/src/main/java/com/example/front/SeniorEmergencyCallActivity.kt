@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 class SeniorEmergencyCallActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_emergency_call)
+        setContentView(R.layout.activity_senior_home)
 
         val emergencyButton = findViewById<LinearLayout>(R.id.btnEmergency)
 
