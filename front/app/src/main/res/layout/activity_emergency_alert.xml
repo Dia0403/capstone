@@ -27,10 +27,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="위급 상황 발생!"
-            android:textSize="20sp"
+            android:textSize="30sp"
             android:textStyle="bold"
             android:textColor="#D32F2F"
-            android:layout_marginBottom="48dp" />
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="50dp" />
 
         <!-- 버튼 -->
         <Button
@@ -38,9 +39,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="알림 해제하기"
+            android:textSize="18dp"
             android:textColor="@android:color/white"
-            android:backgroundTint="#1A237E"
-            android:elevation="6dp"
+            android:backgroundTint="@color/main_blue"
             android:padding="12dp" />
     </LinearLayout>
 

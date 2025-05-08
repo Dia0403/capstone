@@ -7,11 +7,6 @@
     android:layout_height="match_parent"
     android:background="@color/white">
 
-
-    <!--상단 인사-->
-
-    <!-- 로그아웃 -->
-
     <TextView
         android:id="@+id/textGreeting"
         android:layout_width="wrap_content"
@@ -51,14 +46,6 @@
         tools:layout_editor_absoluteX="325dp"
         tools:layout_editor_absoluteY="25dp" />
 
-    <!-- 회색줄 -->
-
-    <!--버튼 1번-->
-
-    <!--버튼 2번-->
-
-    <!--버튼 3번-->
-
     <View
         android:id="@+id/rule"
         android:layout_width="350dp"
@@ -71,28 +58,7 @@
         android:layout_width="350dp"
         android:layout_height="140dp"
         android:background="@drawable/rounded_button_border"
-        android:padding="8dp"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="463dp">
-
-        <TextView
-            android:id="@+id/btnAlert"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|end"
-            android:gravity="center"
-            android:paddingEnd="55dp"
-            android:text="알림\n확인하기"
-            android:textColor="#1A237E"
-            android:textSize="23sp"
-            android:textStyle="bold" />
-    </FrameLayout>
-
-    <FrameLayout
-        android:layout_width="350dp"
-        android:layout_height="140dp"
-        android:background="@drawable/rounded_button_border"
-        android:elevation="4dp"
+        android:elevation="20dp"
         android:padding="8dp"
         tools:layout_editor_absoluteX="32dp"
         tools:layout_editor_absoluteY="302dp">
@@ -103,7 +69,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center|end"
             android:gravity="center"
-            android:paddingEnd="55dp"
+            android:paddingEnd="50dp"
             android:text="현위치\n확인하기"
             android:textColor="#1A237E"
             android:textSize="23sp"
@@ -114,10 +80,10 @@
         android:layout_width="350dp"
         android:layout_height="140dp"
         android:background="@drawable/rounded_button_border"
-        android:elevation="4dp"
+        android:elevation="20dp"
         android:padding="8dp"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="633dp">
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="470dp">
 
         <TextView
             android:id="@+id/btnAlert"
@@ -125,7 +91,29 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center|end"
             android:gravity="center"
-            android:paddingEnd="55dp"
+            android:paddingEnd="50dp"
+            android:text="알림\n확인하기"
+            android:textColor="#1A237E"
+            android:textSize="23sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="350dp"
+        android:layout_height="140dp"
+        android:background="@drawable/rounded_button_border"
+        android:elevation="20dp"
+        android:padding="8dp"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="640dp">
+
+        <TextView
+            android:id="@+id/btnAlert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|end"
+            android:gravity="center"
+            android:paddingEnd="50dp"
             android:text="알림\n해제하기"
             android:textColor="#1A237E"
             android:textSize="23sp"

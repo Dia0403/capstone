@@ -14,7 +14,7 @@
         android:layout_marginBottom="16dp"
         android:gravity="center"
         android:text="🎉 연동 완료 🎉"
-        android:textSize="20sp"
+        android:textSize="25sp"
         android:textStyle="bold" />
 
     <Button
