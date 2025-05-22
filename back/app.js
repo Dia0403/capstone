@@ -6,7 +6,8 @@ const userRoutes = require('./routes/user'); // ✅ 사용자 연동용 라우�
 const linkRoutes = require('./routes/link'); // ✅ 연동용 라우터
 const dotenv = require('dotenv');
 const cors = require('cors');
-
+const alertRoutes = require('./routes/alert');
+app.use('/api', alertRoutes);
 
 
 dotenv.config();
